@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<link rel="./xuanzhuan.css" href="">
+</head>
+
+<body>
+
+	<h1>欢迎访问我的主页</h1>
+	<p>我的服务器地址是/https://1students.github.io</p>
+	<h1>我们的故事</h1>
+	<h1> <a href="./one.html">点击</a></h1>
+	<!-- <h1>第一年</h1>
+	<h1>第二年</h1>
+	<h1>第三年</h1>
+	<h1>第四年</h1>
+	<h1>第五年</h1> -->
+	<h2 class="element"></h2>
+	<audio id="myaudio" style="opacity: 0" controls="controls" loop autoplay="autoplay" preload>
+		<!-- https://cdnoss.zhizuoh5.com/syspic/mp3/o_1dfqubv0q23h18vt1qblt0b12rvg.mp3 -->
+		<source  src="./preferenceLove.mp3" type="audio/mpeg">
+	  </audio>
+
+	<div id="app">
+
+
+
+
+		{{hello}}
+		<div>
+			
+			<button @click="start"> 开始打字</button>
+			<div  v-for="item  in  list ">
+				<p>{{item.name}}</p>
+				<p><img src="" alt=""> </p>
+			</div>
+		</div>
+	
+		
+	
+	</div>
+</body>
+<script>
+	new Vue({
+		el: '#app',
+		data: function () {
+			return {
+				hello: "哈哈哈",
+				list: [
+					{
+						name: '第一年',
+						image: './'
+					}, {
+						name: '第二年',
+						image: './'
+					}, {
+						name: '第三年',
+						image: './'
+					}, {
+						name: '第四年',
+						image: './'
+					}, {
+						name: '第五年',
+						image: './'
+					}
+				]
+			}
+		},
+		created() {
+		
+		},
+		methods: {
+			start() {
+				var typed = new Typed(".element", {
+					/**
+					 * @property {array} strings 要键入的字符串
+					 * @property {string} stringsElement 包含字符串子元素的元素的ID
+					 */
+					strings: ['These are the default values...You know what you should do? You know what you should do?',],
+					stringsElement: null,
+					/**
+					 * @property {number} typeSpeed 输入速度，以毫秒为单位
+					 */
+					typeSpeed: 100,
+					/**
+					 * @property {boolean} showCursor 是否显示光标
+					 * @property {string} cursorChar 光标的字符
+					 * @property {boolean} autoInsertCss 是否将光标和fadeOut的CSS插入HTML <head>
+					 */
+					showCursor: true,
+					cursorChar: '|',
+					autoInsertCss: true,
+
+					/**
+					 * @property {string} attr 输入属性
+					 * 例如：输入占位符，值或仅HTML文本
+					 */
+					attr: null,
+					/**
+					 * 打字已经停止调用的回调函数
+					 * @param {number} arrayPos
+					 * @param {Typed} self
+					 */
+
+					/**
+					 * 开始后调用的回调函数
+					 * @param {number} arrayPos
+					 * @param {Typed} self
+					 */
+
+				});
+			}
+		},
+	})
+
+</script>
+<script type="text/javascript">
+	 var audo = document.getElementById('myaudio');
+      audo.play();
+      document.addEventListener('WeixinJSBridgeReady', function() {
+        audo.play();
+      }, false);
+</script>
+
+</html>
